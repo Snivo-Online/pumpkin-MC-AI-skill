@@ -1,6 +1,6 @@
 ---
 name: pumpkin-mc
-description: Use when writing or loading a Pumpkin MC plugin, porting Bukkit or Paper plugin code, or changing how the Pumpkin server loads plugins. Covers Rust, Python, C#, Go, C, Kotlin, D, and Zig, plus Wasm target, plugins/ entry, and host signatures.
+description: Use when writing or loading a Pumpkin MC plugin, porting Bukkit or Paper plugin code, or changing how the Pumpkin server loads plugins. Covers Rust, Python, C#, Go, C, C++, Kotlin, D, Zig, and TypeScript, plus Wasm target, plugins/ entry, and host signatures.
 ---
 
 # Pumpkin MC plugins
@@ -50,13 +50,14 @@ Read the language directory. Build and entry facts below are the procedure. The 
 | Language | Read | Entry | Build |
 | --- | --- | --- | --- |
 | Rust | `docs/en/plugin-dev/rust/` | `src/lib.rs` | `wasm32-wasip2`, `cdylib` |
-| Python | `docs/en/plugin-dev/python/` | `main.py` | `pumpkin-api-build`, output `.wasm` into `plugins/` |
+| Python | `docs/en/plugin-dev/python/` | `main.py` | `pumpkin-plugin-build`, output `.wasm` into `plugins/` |
 | C# | `docs/en/plugin-dev/csharp/` | class library | `RuntimeIdentifier` `wasi-wasm`; output under `bin/Release/net10.0/wasi-wasm/publish/` |
 | Go | `docs/en/plugin-dev/go/` | `main.go` | `tinygo build -target=wasi` |
-| C | `docs/en/plugin-dev/c/` | `main.c` | wasi-sdk `clang` with `-mexec-model=reactor` |
-| Kotlin | `docs/en/plugin-dev/kotlin/` | `src/wasmWasiMain/kotlin/plugin/Plugin.kt` | `make`; `.wasm` in `build/` |
+| C | `docs/en/plugin-dev/c/` (C++ too) | `main.c` | wasi-sdk `wasm32-wasip2-clang` with `-mexec-model=reactor` |
+| Kotlin | `docs/en/plugin-dev/kotlin/` | `src/wasmWasiMain/kotlin/…` class named by `pumpkin.pluginClass` | `wasmWasi`; `./gradlew build`; `build/<name>.wasm` |
 | D | `docs/en/plugin-dev/d/` | `source/app.d` | `dub build -a wasm32-wasip2` |
 | Zig | `docs/en/plugin-dev/zig/` | `src/main.zig` | `zig build`; output `zig-out/*.wasm` |
+| TypeScript | `docs/en/plugin-dev/typescript/` | `src/index.ts` | `pumpkin-plugin-build`; output `build/<name>.wasm` |
 
 Start at `docs/en/plugin-dev/introduction.md` for the binding repositories.
 
@@ -73,7 +74,7 @@ When changing the loader itself, read `docs/en/developer/plugins/` (`index.md`, 
 ## Folder map
 
 - `docs/en/plugin-dev/introduction.md`
-- `docs/en/plugin-dev/rust/` `python/` `csharp/` `go/` `c/` `kotlin/` `d/` `zig/`
+- `docs/en/plugin-dev/rust/` `python/` `csharp/` `go/` `c/` `kotlin/` `d/` `zig/` `typescript/`
 - `docs/en/plugin-dev/migrating-from-bukkit/`
 - `docs/en/developer/plugins/`
 - `docs/en/config/plugins.md` when plugin load or config rules are in play
