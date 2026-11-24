@@ -54,7 +54,7 @@ Read the language directory. Build and entry facts below are the procedure. The 
 | C# | `docs/en/plugin-dev/csharp/` | class library | `RuntimeIdentifier` `wasi-wasm`; output under `bin/Release/net10.0/wasi-wasm/publish/` |
 | Go | `docs/en/plugin-dev/go/` | `main.go` | `tinygo build -target=wasi` |
 | C | `docs/en/plugin-dev/c/` | `main.c` | wasi-sdk `clang` with `-mexec-model=reactor` |
-| Kotlin | `docs/en/plugin-dev/kotlin/` | `src/wasmWasiMain/kotlin/plugin/Plugin.kt` | `make`; `.wasm` in `build/` |
+| Kotlin | `docs/en/plugin-dev/kotlin/` | `src/wasmWasiMain/kotlin/…` class named by `pumpkin.pluginClass` | `wasmWasi`; `./gradlew build`; `build/<name>.wasm` |
 | D | `docs/en/plugin-dev/d/` | `source/app.d` | `dub build -a wasm32-wasip2` |
 | Zig | `docs/en/plugin-dev/zig/` | `src/main.zig` | `zig build`; output `zig-out/*.wasm` |
 
