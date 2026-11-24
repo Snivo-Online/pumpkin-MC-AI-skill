@@ -55,7 +55,7 @@ Read the language directory. Build and entry facts below are the procedure. The 
 | Go | `docs/en/plugin-dev/go/` | `main.go` | `tinygo build -target=wasi` |
 | C | `docs/en/plugin-dev/c/` (C++ too) | `main.c` | Page names wasi-sdk `wasm32-wasip3-clang` and `-mexec-model=reactor`. An `@0.1.*` component uses `wasm32-wasip2-clang` with the same flag. |
 | Kotlin | `docs/en/plugin-dev/kotlin/` | `src/wasmWasiMain/kotlin/…` class named by `pumpkin.pluginClass` | `wasmWasi`; `./gradlew build`; `build/<name>.wasm` |
-| D | `docs/en/plugin-dev/d/` | `source/app.d` | Page names `dub build -a wasm32-wasip3`. An `@0.1.*` component uses `wasm32-wasip2`. |
+| D | `docs/en/plugin-dev/d/` | `source/app.d` | Page names `dub build -a wasm32-wasip3`. An `@0.1.*` component uses `wasm32-wasip2`. ||
 | Zig | `docs/en/plugin-dev/zig/` | `src/main.zig` | `zig build`; output `zig-out/*.wasm` |
 | TypeScript | `docs/en/plugin-dev/typescript/` | `src/index.ts` | `pumpkin-plugin-build`; output `build/<name>.wasm` |
 
